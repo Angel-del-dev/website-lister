@@ -13,8 +13,7 @@ app.get('/', async (req, res) => {
 app.post('/shortUrls', async (req, res) => {
     await ShortUrl.append({ 
         name: req.body.name,
-        Url: req.body.fullUrl,
-        clicks : 0
+        Url: req.body.fullUrl
      });
     res.redirect('/');
 });
