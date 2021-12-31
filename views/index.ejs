@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project manager</title>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Project manager</h1>
+
+      <form action="/shortUrls" method="POST" class="my-4 form-inline">
+        <label for="name" class="sr-only">Name</label>
+        <input type="text" placeholder="name" name="name" id="name" class="form-controll col mr-2" required />
+        <label for="fullUrl" class="sr-only">Url</label>
+        <input type="url" placeholder="URL" name="fullUrl" id="fullUrl" class="form-controll col mr-2" required />
+        <button type="submit" class="btn btn-success">Shrink</button>
+      </form>
+
+      <table class="table table-striped table-responsive text-center">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Url</th>
+          </tr>
+        </thead>
+        <tbody>
+            <% shortUrls.forEach(url => { %>
+                <tr>
+                    <td><%= url.name %></td>
+                    <td><a href="//<%= url.Url %>" target="_blank"><%= url.Url %></a></td>
+                  </tr>
+            <%}); %> 
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
