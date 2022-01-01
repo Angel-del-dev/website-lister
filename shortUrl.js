@@ -1,5 +1,7 @@
 const fs = require('fs');
-const file = './sites.json';
+const path = require('path');
+const root = path.dirname(require.main.filename);
+const file = root+'/sites.json';
 
 function find() {
     const rawData = fs.readFileSync(file);
