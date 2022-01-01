@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const ShortUrl = require('./models/shortUrl.js'); 
+const ShortUrl = require('./shortUrl.js'); 
 
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false }));
