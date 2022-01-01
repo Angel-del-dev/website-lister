@@ -1,5 +1,5 @@
 const fs = require('fs');
-const file = './sites.json';
+const file = '../sites.json';
 
 function find() {
     const rawData = fs.readFileSync(file);
