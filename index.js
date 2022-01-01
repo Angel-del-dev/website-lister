@@ -1,6 +1,10 @@
 const express = require("express");
 const app = express();
-const ShortUrl = require('./shortUrl.js'); 
+
+const path = require('path');
+const root = path.dirname(require.main.filename);
+
+const ShortUrl = require(root+'/shortUrl.js'); 
 
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false }));
